@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SimpleCaculator</title>
+</head>
+<body>
+<table align="center">
+    <tr>
+        <td><input type="number" id="operand1" align="center" placeholder="Operand 1"></td>
+        <td><input type="number" id="operand2" align="center" placeholder="Operand 2"></td>
+    </tr>
+</table>
+<table align="center" border="1" style="width: 300px;height: 30px">
+    <tr>
+        <td><output id="out"></output></td>
+    </tr>
+</table>
+<table align="center">
+    <tr>
+        <td><button id="1" type="button" onclick="cal(1)">+</button></td>
+        <td><button id="2" type="button" onclick="cal(2)">-</button></td>
+        <td><button id="3" type="button" onclick="cal(3)">x</button></td>
+        <td><button id="4" type="button" onclick="cal(4)">/</button></td>
+    </tr>
+</table>
+<script>
+    let operand1;
+    let operand2;
+    function cal(a) {
+        operand1 = Number(document.getElementById("operand1").value);
+        operand2 = Number(document.getElementById("operand2").value);
+        document.getElementById("out").innerHTML = "";
+        switch (a) {
+            case 1:
+                operand1 += operand2;
+                break;
+            case 2:
+                operand1 -= operand2;
+                break;
+            case 3:
+                operand1 *= operand2;
+                break;
+            case 4:
+                operand1 /= operand2;
+                break;
+        }
+        document.getElementById("out").innerHTML = operand1;
+    }
+</body>
+</html>
